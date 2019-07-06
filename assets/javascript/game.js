@@ -15,18 +15,14 @@ var goalAccomplished;
 var goalFailed;
 addNumbers();
 
+$("#button").empty();
 $("#button").html("<button id='restart'>Play Again!</button>");
 
 $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
-    //console.log(goalNumber);
     crystal1 = Math.floor(Math.random()*(12-1+1)+1)
-    console.log(crystal1);
     crystal2 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal2);
     crystal3 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal3);
     crystal4 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal4);
     $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
     $("#wins").html("Wins: ");
     $("#losses").html("Losses: ");
@@ -40,7 +36,6 @@ function addNumbers() {
 
         currentScore = currentScore + crystal1;
             $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-            console.log(currentScore);
     
         if (currentScore === goalNumber) {
             goalAccomplished = true;
@@ -64,7 +59,6 @@ function addNumbers() {
 
         currentScore = currentScore + crystal2;
             $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-            console.log(currentScore);
     
         if (currentScore === goalNumber) {
             goalAccomplished = true;
@@ -88,8 +82,7 @@ function addNumbers() {
 
         currentScore = currentScore + crystal3;
             $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-            console.log(currentScore);
-    
+            
         if (currentScore === goalNumber) {
             goalAccomplished = true;
             wins++;
@@ -112,7 +105,6 @@ function addNumbers() {
 
         currentScore = currentScore + crystal4;
             $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-            console.log(currentScore);
     
         if (currentScore === goalNumber) {
             goalAccomplished = true;
@@ -126,28 +118,36 @@ function addNumbers() {
             $("#losses").html("Losses: " + losses);
             $("#message").html("You lose!!");
         } 
+       
         
+
     });
 
-/*$("#restart").click(function() {
-    var goalNumber = Math.floor(Math.random()*(120-19+1)+19); 
-    $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
-    //console.log(goalNumber);
-    crystal1 = Math.floor(Math.random()*(12-1+1)+1)
-    console.log(crystal1);
-    crystal2 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal2);
-    crystal3 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal3);
-    crystal4 = Math.floor(Math.random()*(12-1+1)+1)
-    //console.log(crystal4);
-    $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-}
-);*/
-
-
+    
 
 };
+
+$("#restart").click(function() {
+    goalNumber = Math.floor(Math.random()*(120-19+1)+19); 
+    $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
+    currentScore = 0;
+    crystal1 = Math.floor(Math.random()*(12-1+1)+1);
+    console.log(crystal1);
+    crystal2 = Math.floor(Math.random()*(12-1+1)+1);
+    console.log(crystal2);
+    crystal3 = Math.floor(Math.random()*(12-1+1)+1);
+    console.log(crystal3);
+    crystal4 = Math.floor(Math.random()*(12-1+1)+1);
+    console.log(crystal4);
+    $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+    $("#wins").html("Wins: " + wins);
+    $("#losses").html("Losses: " + losses);
+    goalAccomplished = false;
+    goalFailed = false;
+    $("#message").empty();
+    addNumbers();
+}
+);  
 
 });
 
