@@ -4,10 +4,10 @@ $(document).ready(function() {
 $("#start" ).click(function() {
 
 var goalNumber = Math.floor(Math.random()*(120-19+1)+19); 
-var crystal1;
-var crystal2;
-var crystal3;
-var crystal4;
+var crystal1 = Math.floor(Math.random()*(12-1+1)+1);
+var crystal2 = Math.floor(Math.random()*(12-1+1)+1);
+var crystal3 = Math.floor(Math.random()*(12-1+1)+1);
+var crystal4 = Math.floor(Math.random()*(12-1+1)+1);
 var currentScore = 0;
 var wins = 0;
 var losses = 0;
@@ -15,14 +15,11 @@ var goalAccomplished;
 var goalFailed;
 addNumbers();
 
-$("#button").empty();
+
 $("#button").html("<button id='restart'>Play Again!</button>");
 
 $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
-    crystal1 = Math.floor(Math.random()*(12-1+1)+1)
-    crystal2 = Math.floor(Math.random()*(12-1+1)+1)
-    crystal3 = Math.floor(Math.random()*(12-1+1)+1)
-    crystal4 = Math.floor(Math.random()*(12-1+1)+1)
+   
     $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
     $("#wins").html("Wins: ");
     $("#losses").html("Losses: ");
@@ -145,7 +142,7 @@ $("#restart").click(function() {
     goalAccomplished = false;
     goalFailed = false;
     $("#message").empty();
-    addNumbers();
+    
 }
 );  
 
