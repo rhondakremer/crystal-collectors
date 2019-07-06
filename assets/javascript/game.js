@@ -1,166 +1,161 @@
-// characters fight each other and lose health while doing it
-
 $(document).ready(function() {
 
 
+$("#start" ).click(function() {
 
-    var hero;
-    var challenger;
-    var heroSelected = false;
-    var challengerSelected = false;
-    selectHero();
-    selectChallenger();
+var goalNumber = Math.floor(Math.random()*(120-19+1)+19); 
+var crystal1;
+var crystal2;
+var crystal3;
+var crystal4;
+var currentScore = 0;
+var wins = 0;
+var losses = 0;
+var goalAccomplished;
+var goalFailed;
+addNumbers();
 
-    var characters = [
-    rambo = { 
-        name: "Rambo",
-        healthPoints: 100,
-        attackPoints: 10,
-        counterAttackPower: 10,
-    },
+$("#button").html("<button id='restart'>Play Again!</button>");
 
-    judgeDredd = 
-    { 
-        name: "Judge Dredd",
-        healthPoints: 100,
-        attackPoints: 10,
-        counterAttackPower: 20,
-    },
-
-    cobra = 
-    { 
-        name: "Cobra",
-        healthPoints: 100,
-        attackPoints: 10,
-        counterAttackPower: 30,
-    },
-
-    rocky = 
-    { 
-        name: "Rocky",
-        healthPoints: 100,
-        attackPoints: 10,
-        counterAttackPower: 40,
-    },
-    ]; 
-   
-    function selectHero() {
-    $("#rambopic" ).click(function() {
-        if (heroSelected === false) 
-        {
-        //alert("They drew first blood, not me.");
-        $("#rambopic").appendTo( $("#heropic"));
-        $("<p>This will show some info</p>").appendTo( $("#heroinfo"));
-        heroSelected = true;
-        hero = rambo;
-        console.log(hero);
-        }
-        });
-    
-
-    $("#judgedreddpic" ).click(function() {
-        if (heroSelected === false) 
-        {
-        //alert("The law never apologizes.");
-        $("#judgedreddpic").appendTo( $("#heropic"));
-        $("<p>This will show some info</p>").appendTo( $("#heroinfo"));
-        heroSelected = true;
-        hero = judgeDredd;
-        console.log(hero);
-        }
-        });
-
-    $("#rockypic" ).click(function() {
-        if (heroSelected === false) 
-        {
-        //alert("All I wanna do is go the distance.");
-        $("#rockypic").appendTo( $("#heropic"));
-        $("<p>This will show some info</p>").appendTo( $("#heroinfo"));
-        heroSelected = true;
-        hero = rocky;
-        console.log(hero);
-        }
-        });
+$("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
+    //console.log(goalNumber);
+    crystal1 = Math.floor(Math.random()*(12-1+1)+1)
+    console.log(crystal1);
+    crystal2 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal2);
+    crystal3 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal3);
+    crystal4 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal4);
+    $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+    $("#wins").html("Wins: ");
+    $("#losses").html("Losses: ");
 
 
-    $("#cobrapic" ).click(function() {
-        if (heroSelected === false) 
-        {
-        //alert("This is where the law ends and I start.");
-        $("#cobrapic").appendTo( $("#heropic"));
-        $("<p>This will show some info</p>").appendTo( $("#heroinfo"));
-        heroSelected = true;
-        hero = cobra;
-        console.log(hero);
-        }
-        });
+function addNumbers() {
+$("#crystal1").click(function() {
+    if (goalAccomplished == true || goalFailed == true) {
+        return;
     }
 
-    function selectChallenger() {
-        $("#rambopic" ).click(function() {
-            if (challengerSelected === false && hero !== rambo) 
-            {
-            //alert("They drew first blood, not me.");
-            $("#rambopic").appendTo( $("#challengerpic"));
-            $("<p>This will show some more info</p>").appendTo( $("#challengerinfo"));
-            challengerSelected = true;
-            challenger = rambo;
-            console.log(challenger);
-            }
-            });
-        
-    
-        $("#judgedreddpic" ).click(function() {
-            if (challengerSelected === false && hero !== judgeDredd)
-            {
-            //alert("The law never apologizes.");
-            $("#judgedreddpic").appendTo( $("#challengerpic"));
-            $("<p>This will show some more info</p>").appendTo( $("#challengerinfo"));
-            challengerSelected = true;
-            challenger = judgeDredd;
-            console.log(challenger);
-            }
-            });
-    
-        $("#rockypic" ).click(function() {
-            if (challengerSelected === false && hero !== rocky) 
-            {
-            //alert("All I wanna do is go the distance.");
-            $("#rockypic").appendTo( $("#challengerpic"));
-            $("<p>This will show some more info</p>").appendTo( $("#challengerinfo"));
-            challengerSelected = true;
-            challenger = rocky;
-            console.log(challenger);
-            }
-            });
-    
-    
-        $("#cobrapic" ).click(function() {
-            if (challengerSelected === false && hero !== cobra) 
-            {
-            //alert("This is where the law ends and I start.");
-            $("#cobrapic").appendTo( $("#challengerpic"));
-            $("<p>This will show some more info</p>").appendTo( $("#challengerinfo"));
-            challengerSelected = true;
-            challenger = cobra;
-            console.log(challenger);
-            }
-            });
-        }
-
-
+    else if (currentScore === goalNumber) {
+        goalAccomplished = true;
+        wins++;
+        $("#wins").html(wins);
+        $("#message").html("You win!!");
        
-    //when 
-    //when health points=0, empty from div
+    }
+    else if (currentScore > goalNumber) {
+            goalFailed == true;
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            $("#message").html("You lose!!");
+            
+    } 
+    else {
+        currentScore = currentScore + crystal1;
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        console.log(currentScore);
+    } 
+    
+});
 
- 
 
-    //make next selecter character the fighter
-    //move figher to different area
-    //button that says fight
-    //on click take some points from hero and some from fighter
-    //increase points taken away from fighter with each hit
-    //if hero has 0, end game
-    //if fighter has 0, select next character until they are all dead
-    //reset game with button
+$("#crystal2").click(function() {
+    if (goalAccomplished == true || goalFailed == true) {
+        return;
+    }
+
+    else if (currentScore === goalNumber) {
+        goalAccomplished = true;
+        wins++;
+        $("#wins").html("Wins: " + wins);
+        $("#message").html("You win!!");
+    }
+    else if (currentScore > goalNumber) {
+            goalFailed = true;
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            $("#message").html("You lose!!");
+    } 
+    else {
+        currentScore = currentScore + crystal2;
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        console.log(currentScore);
+    } 
+});
+
+$("#crystal3").click(function() {
+    if (goalAccomplished == true || goalFailed == true) {
+        return;
+    }
+
+    else if (currentScore === goalNumber) {
+        goalAccomplished = true;
+        wins++;
+        $("#wins").html("Wins: " + wins);
+        $("#message").html("You win!!");
+    }
+    else if (currentScore > goalNumber) {
+            goalFailed = true;
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            $("#message").html("You lose!!");
+    } 
+    else {
+        currentScore = currentScore + crystal3;
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        console.log(currentScore);
+    } 
+});
+
+$("#crystal4").click(function() {
+    if (goalAccomplished == true || goalFailed == true) {
+        return;
+    }
+
+    else if (currentScore === goalNumber) {
+        goalAccomplished = true;
+        wins++;
+        $("#wins").html("Wins: " + wins);
+        $("#message").html("You win!!");
+    }
+    else if (currentScore > goalNumber) {
+            goalFailed = true;
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            $("#message").html("You lose!!");
+    } 
+    else {
+        currentScore = currentScore + crystal4;
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        console.log(currentScore);
+    } 
+
+   
+
+});
+
+/* $("#restart").click(function() {
+    var goalNumber = Math.floor(Math.random()*(120-19+1)+19); 
+    $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
+    //console.log(goalNumber);
+    crystal1 = Math.floor(Math.random()*(12-1+1)+1)
+    console.log(crystal1);
+    crystal2 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal2);
+    crystal3 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal3);
+    crystal4 = Math.floor(Math.random()*(12-1+1)+1)
+    //console.log(crystal4);
+    $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+}
+);*/
+
+
+
+};
+
+});
+
 });

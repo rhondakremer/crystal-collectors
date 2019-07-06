@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Stallone Massacre</title>
+        <title>Counting Crystals</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -9,25 +9,29 @@
     </head>
 
     <body>
-        <div id="title">Pick your character to begin the massacre</div>
-        <div id="startingCharacters">
-            <img id="rambopic" src="./assets/images/rambo.png" />
-            <img id="judgedreddpic" src="./assets/images/judgedredd.jpg" />
-            <img id="rockypic" src="assets/images/rocky.jpg" />
-            <img id="cobrapic" src="assets/images/cobra.jpg" />
-        </div>
-        <div id="battlefield">
-            <div id="herostuff">
-                <div id="heropic"></div>
-                <div id="heroinfo"></div>
-            </div>
-            <div id="challengerstuff">
-                <div id="challengerpic"></div>
-                <div id="challengerinfo"></div>
-            </div>
+        <div id="title">Crystal Collectors</div>
+        <div id="instructions">
+            <p>You will receive a random number at the start of the game.</p>
+            <p>There are four crystals below. By clicking on a crystal, you will add a specific number of points to your score.</p>
+            <p>If you successfully match your score to the random number given to you, you will win the game. If you exceed the number, you will lose.</p>
+            <p>The value of each crystal is hidden until you click it, and it will change every round.</p>
+            <p>Let's get clicking! Press the start button below to begin.</p>
         </div>
         <div id="button">
-            <button>Attack</button>
+                <button id="start">Click to start</button>
+            </div>
+        <div id="crystals">
+            <img id="crystal1" src="./assets/images/crystal1.png" />
+            <img id="crystal2" src="./assets/images/crystal2.png" />
+            <img id="crystal3" src="assets/images/crystal3.jpeg" />
+            <img id="crystal4" src="assets/images/crystal4.jpeg" />
         </div>
+            <div id="goalnumber"></div>
+            <div id= "currentScore"></div>
+            <div id="message"></div>
+            <div id="wins"></div>
+            <div id="losses"></div>
+        </div>
+       
     </body>
 </html>
