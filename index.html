@@ -4,34 +4,41 @@
         <title>Counting Crystals</title>
         <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Barriecito|Crete+Round&display=swap" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="./assets/javascript/game.js"></script>
     </head>
 
     <body>
-        <div id="title">Crystal Collectors</div>
+        <div id="title"><h1>Crystal Collectors</h1></div>
+        <div id="container">
         <div id="instructions">
-            <p>You will receive a random number at the start of the game.</p>
-            <p>There are four crystals below. By clicking on a crystal, you will add a specific number of points to your score.</p>
+            <p>You will receive a random number at the start of the game. This is the number you want to reach!</p>
+            <p>There are four crystals. Each crystal is randomly assigned a value at the start of the game. By clicking on a crystal, you will add a specifc number of points to your score.</p>
             <p>If you successfully match your score to the random number given to you, you will win the game. If you exceed the number, you will lose.</p>
             <p>The value of each crystal is hidden until you click it, and it will change every round.</p>
-            <p>Let's get clicking! Press the start button below to begin.</p>
+            <p>Let's get clicking! Press the start button to begin.</p>
         </div>
-        <div id="button">
-                <button id="start">Click to start</button>
-            </div>
-        <div id="crystals">
-            <img id="crystal1" src="./assets/images/crystal1.png" />
-            <img id="crystal2" src="./assets/images/crystal2.png" />
-            <img id="crystal3" src="assets/images/crystal3.jpeg" />
-            <img id="crystal4" src="assets/images/crystal4.jpeg" />
-        </div>
+        <div id="secondcolumn">
+                <div id="button">
+                        <button id="start">Click to start</button>
+                    </div>
+                <div id="crystals">
+                    <img id="crystal1" src="./assets/images/crystal1.png" />
+                    <img id="crystal2" src="./assets/images/crystal2.png" />
+                    <img id="crystal3" src="assets/images/crystal3.jpeg" />
+                    <img id="crystal4" src="assets/images/crystal4.jpeg" />
+                </div>
+                </div>
+        <div id="stats">
             <div id="goalnumber"></div>
             <div id= "currentScore"></div>
             <div id="wins"></div>
             <div id="losses"></div>
             <div id="message"></div>
         </div>
+        </div>
+        
        
     </body>
 </html>

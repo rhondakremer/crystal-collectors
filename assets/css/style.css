@@ -1,11 +1,89 @@
+body {
+    background-color: mintcream;
+    background-size: 100%;
+}
+
+h1 {
+    font-family: 'Barriecito', cursive;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-left: 15px;
+    margin-top: 20px;
+    
+}
+
+#instructions {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    width: 40%; 
+}
+
+p {
+    font-family: 'Crete Round', serif!important;
+    font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+    line-height: 50px;
+}
+
+#button {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    margin-top: 70px;
+    margin-bottom: 90px;
+}
+
+#stats {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding-left: 15px;
+    width: 20%;
+    font-size: 20px;
+    font-family: 'Crete Round', serif!important;
+    line-height: 50px;
+}
+
+#message {
+    font-size: 100px;
+}
+
+#secondcolumn {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding-left: 15px;
+    width: 35%;
+}
+
+#crystals {
+    text-align: center;
+}
+
 #crystal1 {
     height: 110px;
     width: auto;
+    background-color: white;
 }
 
 #crystal2 {
     height: 110px;
     width: auto;
+    background-color: white;
 }
 
 #crystal3 {
