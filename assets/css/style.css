@@ -32,7 +32,7 @@ p {
     font-size: 20px;
     padding-left: 10%;
     padding-right: 10%;
-    line-height: 50px;
+    line-height: 45px;
 }
 
 #button {
@@ -60,6 +60,9 @@ button {
 
 #message {
     font-size: 100px;
+    line-height: 90px;
+    text-align: center;
+    padding-top: 20px;
 }
 
 #secondcolumn {
