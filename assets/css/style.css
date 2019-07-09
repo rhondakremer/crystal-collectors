@@ -1,6 +1,7 @@
 body {
     background-color: mintcream;
     background-size: 100%;
+    
 }
 
 h1 {
@@ -16,6 +17,7 @@ h1 {
     justify-content: flex-start;
     align-items: stretch;
     padding-left: 15px;
+    padding-right: 15px;
     margin-top: 20px;
     
 }
@@ -47,17 +49,6 @@ button {
     margin-bottom: 90px;
 }
 
-#stats {
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    padding-left: 10px;
-    width: 24%;
-    font-size: 20px;
-    font-family: 'Crete Round', serif!important;
-    line-height: 50px;
-}
-
 #message {
     font-size: 100px;
     line-height: 90px;
@@ -70,7 +61,18 @@ button {
     border-style: solid;
     border-color: black;
     padding-left: 15px;
-    width: 31%;
+    width: 35%;
+}
+
+#stats {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding-left: 10px;
+    width: 25%;
+    font-size: 20px;
+    font-family: 'Crete Round', serif!important;
+    line-height: 50px;
 }
 
 
