@@ -51,7 +51,7 @@ button {
     border-width: 2px;
     border-style: solid;
     border-color: black;
-    padding-left: 15px;
+    padding-left: 10px;
     width: 24%;
     font-size: 20px;
     font-family: 'Crete Round', serif!important;
@@ -72,6 +72,7 @@ button {
     padding-left: 15px;
     width: 31%;
 }
+
 
 #crystals {
     text-align: center;
@@ -98,3 +99,4 @@ button {
     height: 110px;
     width: auto;
 }
+
