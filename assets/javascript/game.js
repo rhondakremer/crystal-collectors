@@ -35,11 +35,11 @@ $(document).ready(function () {
 
     $("#start").click(function() {
         assignCrystalValues()
-        $("button").html("Play again");
         goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
         currentScore = 0;
         goalAccomplished = false;
         goalFailed = false;
+        $("button").html("Play again");
         $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
         $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
         $("#wins").html("Wins: " + wins);

@@ -1,7 +1,6 @@
 body {
     background-color: mintcream;
-    background-size: 100%;
-    
+    background-size: 100%; 
 }
 
 h1 {
@@ -19,7 +18,6 @@ h1 {
     padding-left: 15px;
     padding-right: 15px;
     margin-top: 20px;
-    
 }
 
 #instructions {
