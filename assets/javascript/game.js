@@ -1,153 +1,54 @@
 $(document).ready(function () {
-
+    
     var goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-    var crystal1 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-    var crystal2 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-    var crystal3 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-    var crystal4 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
     var currentScore = 0;
     var wins = 0;
     var losses = 0;
     var goalAccomplished;
     var goalFailed;
 
+    function assignCrystalValues() {
+        $( ".crystal" ).each(function() {
+            $(this).attr("data-value", Math.floor(Math.random() * (12 - 1 + 1) + 1));
+        });
+    }
 
-    $("#start").click(function () {
-
-
-        addNumbers();
-
-
-        $("#button").html("<button id='restart'>Play Again!</button>");
-
-        $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
-
-        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-        $("#wins").html("Wins: ");
-        $("#losses").html("Losses: ");
-
-
-        function addNumbers() {
-            $("#crystal1").click(function () {
-                if (goalAccomplished == true || goalFailed == true) {
-                    return;
-                }
-
-                currentScore = currentScore + crystal1;
-                $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-
-                if (currentScore === goalNumber) {
-                    goalAccomplished = true;
-                    wins++;
-                    $("#wins").html("Wins: " + wins);
-                    $("#message").html("You win!!");
-                }
-                else if (currentScore > goalNumber) {
-                    goalFailed = true;
-                    losses++;
-                    $("#losses").html("Losses: " + losses);
-                    $("#message").html("You lose!!");
-                }
-
-            });
-
-            $("#crystal2").click(function () {
-                if (goalAccomplished == true || goalFailed == true) {
-                    return;
-                }
-
-                currentScore = currentScore + crystal2;
-                $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-
-                if (currentScore === goalNumber) {
-                    goalAccomplished = true;
-                    wins++;
-                    $("#wins").html("Wins: " + wins);
-                    $("#message").html("You win!!");
-                }
-                else if (currentScore > goalNumber) {
-                    goalFailed = true;
-                    losses++;
-                    $("#losses").html("Losses: " + losses);
-                    $("#message").html("You lose!!");
-                }
-
-            });
-
-            $("#crystal3").click(function () {
-                if (goalAccomplished == true || goalFailed == true) {
-                    return;
-                }
-
-                currentScore = currentScore + crystal3;
-                $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-
-                if (currentScore === goalNumber) {
-                    goalAccomplished = true;
-                    wins++;
-                    $("#wins").html("Wins: " + wins);
-                    $("#message").html("You win!!");
-                }
-                else if (currentScore > goalNumber) {
-                    goalFailed = true;
-                    losses++;
-                    $("#losses").html("Losses: " + losses);
-                    $("#message").html("You lose!!");
-                }
-
-            });
-
-            $("#crystal4").click(function () {
-                if (goalAccomplished == true || goalFailed == true) {
-                    return;
-                }
-
-                currentScore = currentScore + crystal4;
-                $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-
-                if (currentScore === goalNumber) {
-                    goalAccomplished = true;
-                    wins++;
-                    $("#wins").html("Wins: " + wins);
-                    $("#message").html("You win!!");
-                }
-                else if (currentScore > goalNumber) {
-                    goalFailed = true;
-                    losses++;
-                    $("#losses").html("Losses: " + losses);
-                    $("#message").html("You lose!!");
-                }
-
-
-
-            });
-
-
-
-        };
-
-        $("#restart").click(function () {
-            goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
-            $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
-            currentScore = 0;
-            crystal1 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            console.log(crystal1);
-            crystal2 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            console.log(crystal2);
-            crystal3 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            console.log(crystal3);
-            crystal4 = Math.floor(Math.random() * (12 - 1 + 1) + 1);
-            console.log(crystal4);
-            $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
-            $("#wins").html("Wins: " + wins);
-            $("#losses").html("Losses: " + losses);
-            goalAccomplished = false;
-            goalFailed = false;
-            $("#message").empty();
-
+    function addNumbers(crystalValue) {
+        if (goalAccomplished == true || goalFailed == true) {
+            return;
         }
-        );
+        currentScore += Number(crystalValue);
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        if (currentScore === goalNumber) {
+            goalAccomplished = true;
+            wins++;
+            $("#wins").html("Wins: " + wins);
+            $("#message").html("You win!!");
+        }
+        else if (currentScore > goalNumber) {
+            goalFailed = true;
+            losses++;
+            $("#losses").html("Losses: " + losses);
+            $("#message").html("You lose!!");
+        }
+    };
 
+    $("#start").click(function() {
+        assignCrystalValues()
+        $("button").html("Play again");
+        goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+        currentScore = 0;
+        goalAccomplished = false;
+        goalFailed = false;
+        $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
+        $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
+        $("#wins").html("Wins: " + wins);
+        $("#losses").html("Losses: " + losses);
+        $("#message").empty();
+    });
+
+    $(".crystal").click(function() {
+        addNumbers($(this).attr('data-value'))
     });
 
 });

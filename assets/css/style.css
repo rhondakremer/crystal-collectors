@@ -80,25 +80,9 @@ button {
     text-align: center;
 }
 
-#crystal1 {
+.crystal {
     width: 22%;
     height: auto;
     background-color: white;
-}
-
-#crystal2 {
-    width: 22%;
-    height: auto;
-    background-color: white;
-}
-
-#crystal3 {
-    width: 22%;
-    height: auto;
-}
-
-#crystal4 {
-    width: 22%;
-    height: auto;
 }
 
