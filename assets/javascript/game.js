@@ -1,11 +1,9 @@
 $(document).ready(function () {
-    
     var goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
     var currentScore = 0;
     var wins = 0;
     var losses = 0;
-    var goalAccomplished;
-    var goalFailed;
+    let gameOver = false;
 
     function assignCrystalValues() {
         $( ".crystal" ).each(function() {
@@ -14,19 +12,19 @@ $(document).ready(function () {
     }
 
     function addNumbers(crystalValue) {
-        if (goalAccomplished == true || goalFailed == true) {
+        if (gameOver) {
             return;
         }
         currentScore += Number(crystalValue);
         $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
         if (currentScore === goalNumber) {
-            goalAccomplished = true;
+            gameOver = true;
             wins++;
             $("#wins").html("Wins: " + wins);
             $("#message").html("You win!!");
         }
         else if (currentScore > goalNumber) {
-            goalFailed = true;
+            gameOver = true;
             losses++;
             $("#losses").html("Losses: " + losses);
             $("#message").html("You lose!!");
@@ -37,8 +35,7 @@ $(document).ready(function () {
         assignCrystalValues()
         goalNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
         currentScore = 0;
-        goalAccomplished = false;
-        goalFailed = false;
+        gameOver = false;
         $("button").html("Play again");
         $("#goalnumber").html("<p>Goal number is: " + goalNumber + "</p>");
         $("#currentScore").html("<p>Your current score is: " + currentScore + "</p>");
